@@ -3,6 +3,8 @@ import functions
 
 todos = functions.get_todos()
 
+st.set_page_config(layout='wide')
+
 
 def add_todo():
     todo = st.session_state['new_todo']
@@ -12,8 +14,8 @@ def add_todo():
 
 st.title("Todo App")
 st.subheader("This app is used to increase your productivity.")
-st.write("Type in the input box to add a todo.")
-st.write('Check off a checkbox to complete a todo.')
+st.write("Type in the <b>input box</b> to <b>add</b> a todo.", unsafe_allow_html=True)
+st.write('Check off a <b>checkbox</b> to <b>complete</b> a todo.', unsafe_allow_html=True)
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo.title(), key=todo)
